@@ -1,0 +1,28 @@
+.event{
+    display: flex;
+}
+ul{
+    list-style: none;
+}
+li, p{
+    background: #6e89ff;
+    color: black;
+    padding: 5px;
+    border-radius: 5px;
+    width: 100px;
+    margin-top: 10px;
+    color: white;
+
+}
+.lorem{
+    width: 100%;
+    background-color: white;
+    color: black;
+}
+button{
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    margin-left: 50px;
+    cursor: pointer;
+}
