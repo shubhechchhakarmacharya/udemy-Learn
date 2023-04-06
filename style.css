@@ -1,12 +1,15 @@
-body{
+body {
     position: relative;
 }
-.event{
+
+.event {
     display: flex;
 }
-ul{
+
+ul {
     list-style: none;
 }
+
 li {
     background: #6e89ff;
     color: black;
@@ -18,7 +21,8 @@ li {
     cursor: pointer;
 
 }
-button{
+
+button {
     padding: 10px;
     border-radius: 10px;
     border: none;
@@ -26,31 +30,58 @@ button{
     cursor: pointer;
 }
 
-.box{
+.box {
     margin-top: 30px;
     background-color: #dfdfdf;
     color: black;
     padding: 50px;
     font-size: 30px;
 }
+
 button{
     border: 1px solid #7e96ff;
     color: rgb(0, 0, 0);
     background-color: white;
+    border-radius: 5px;
 }
-.popup{
+
+.popup {
     position: absolute;
     top: 50%;
     left: 30px;
     padding-left: 30px;
     margin-top: 30px;
     padding: 30px;
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0, 0, 0, 0.5);
     color: white;
     display: none;
     cursor: pointer;
 }
-.popup a{
+
+.popup a {
     color: white;
     text-decoration: overline;
+}
+
+form {
+    margin-top: 30px;
+}
+
+input {
+    margin-top: 10px;
+    border: 1px solid #7e96ff;
+    color: rgb(0, 0, 0);
+    background-color: white;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.submit{
+    border: none;
+    color: rgb(254, 254, 254);
+    background-color: #7e96ff;
+    border-radius: 5px;
+    padding:10px 50px;
+    margin-left: 20px;
+    cursor: pointer;
 }

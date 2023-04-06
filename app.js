@@ -73,3 +73,36 @@ close.addEventListener('click',()=>{
 popup.addEventListener('click', () =>{
     popup.style.display = 'none';
 });
+
+//form event
+
+const submit = document.querySelector(".signup");
+const pattern = /^[a-zA-Z]{4,}$/;
+const fill = document.querySelector("#fill");
+let result = submit.name.value.search(pattern)
+submit.addEventListener("submit", e =>{
+    e.preventDefault();
+    if (pattern.test(submit.name.value) === true && pattern.test(submit.password.value)){
+        fill.textContent = "WOW! nice username and password."
+    }
+    else{
+        fill.textContent = "Username and password must only contain alphabets."
+    }
+})
+
+submit.name.addEventListener('keyup', e =>{
+    if(pattern.test(submit.name.value)){
+        submit.name.style.backgroundColor = '#5aff5a'
+    }
+    else{
+        submit.name.style.backgroundColor = '#a60000bd'
+    }
+})
+submit.password.addEventListener('keyup', e =>{
+        if(pattern.test(submit.password.value)){
+            submit.password.style.backgroundColor = '#5aff5a'
+        }
+        else{
+            submit.password.style.backgroundColor = '#a60000bd'
+        }
+})
