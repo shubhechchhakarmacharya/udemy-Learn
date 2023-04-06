@@ -20,9 +20,9 @@ const ul = document.querySelector(".ul")
 
 const list = document.querySelectorAll('li');
 list.forEach((tag)=>{
-    tag.style.cursor = 'pointer'
     tag.addEventListener('click', e =>{
         e.target.style.color = 'purple';
+        // e,stopPropogation()  for avoiding event bubbling (firing both child and parent eventlisteners)
     });
 });
 
@@ -30,15 +30,46 @@ const button = document.querySelector(".add");
 button.addEventListener('click', ()=>{
     const li = document.createElement("li");
     const p = document.createElement('p')
-    p.textContent = "Prepended"
-    li.textContent = "Appended"
+    // p.textContent = "Prepended"  //Added from top
+    li.textContent = "Appended" //Added from bottom
     ul.append(li);
     ul.prepend(p);
 })
 
-const items = document.querySelectorAll(".li");
-items.forEach(item =>{
-    item.addEventListener('click', e => {
-        e.target.remove()
-    });
+ul.addEventListener('click',e =>{
+    if(e.target.tagName === 'LI'){
+        e.target.remove();
+    }
+})
+
+const box = document.querySelector(".box");
+box.addEventListener("mousemove",(e) =>{
+    box.innerHTML = `Position of X is ${e.offsetX} <br/> Position of Y is ${e.offsetY}`
+})
+
+document.addEventListener('wheel', (e) =>{
+    console.log(e.pageX,e.pageY)
+})
+
+const boxP = document.querySelectorAll('.boxP');
+boxP.forEach((P)=>{
+    P.addEventListener("copy",(e) =>{
+        alert("You cannot copy this.")
+    })
+})
+
+//Popup event
+
+const pop = document.querySelector('#btn');
+const popup = document.querySelector('.popup')
+pop.addEventListener('click',()=>{
+    popup.style.display ='block';
+});
+
+const close = document.querySelector('.cross');
+close.addEventListener('click',()=>{
+    popup.style.display = 'none';
+});
+popup.addEventListener('click', () =>{
+    popup.style.display = 'none';
 });
