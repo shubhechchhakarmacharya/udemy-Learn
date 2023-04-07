@@ -106,3 +106,79 @@ submit.password.addEventListener('keyup', e => {
         submit.password.style.backgroundColor = '#a60000bd'
     }
 })
+
+//Filter method 
+
+const user = [
+    {user : "Name1" , paid:true},
+    {user : "Name2" , paid:false},
+    {user : "Name3" , paid:true},
+    {user : "Name4" , paid:false}
+];
+
+const filtered = user.filter(users=>users.paid);
+console.log(filtered);
+
+//Map method
+
+const product = [
+    {name : "Kajal" , price : 50},
+    {name : "Lipstick" , price : 300},
+    {name : "Eyeshadow" , price : 1050},
+    {name : "Foundation" , price : 1200}
+]
+
+const productDetail = product.map((total)=>{
+    if (total.price <= 300){
+        return total.price;
+    }
+    else{
+        return total.price*2;
+    };
+})
+
+console.log(productDetail)
+
+//Reduce method
+
+const number = [
+    {subject:"Maths" , mark: 60},
+    {subject:"Maths" , mark: 70},
+    {subject:"Social" , mark: 80},
+    {subject:"Science" , mark: 90},
+    {subject:"Maths" , mark: 98},
+    {subject:"Account" , mark: 50},
+    {subject:"Maths" , mark: 80}
+]
+
+const total = number.reduce((acc,curr) =>{
+    if (curr.subject === "Maths"){
+        return acc=+ curr.mark;
+    }
+    console.log(acc);
+})
+
+// sort method
+
+const num = [
+    {name:"Name" , score:70},
+    {name:"Name2" , score:60},
+    {name:"Name3" , score:170},
+    {name:"Name4" , score:80}
+]
+
+num.sort((a,b) =>{
+    return b.score - a.score;
+});
+console.log(num)
+const numbers = [
+    {name:"Name" , score:70},
+    {name:"Name2" , score:60},
+    {name:"Name3" , score:170},
+    {name:"Name4" , score:50}
+]
+const final = numbers
+    .filter(fnum =>fnum.score > 60)
+    .map(fnum => `The score is ${fnum.score} of ${fnum.name}.`);
+console.log(final)
+//chaining the array method
