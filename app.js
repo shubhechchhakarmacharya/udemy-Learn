@@ -227,7 +227,32 @@ const something = () =>{
     })
 }
 something().then(data =>{ 
-    console.log(resolve())
+    console.log(data)
 }).catch(err =>{
     console.log(err)
 })
+
+//fetch api
+
+fetch('https://jsonplaceholder.typicode.com/todos/').then((response) => {
+    console.log('resolved', response);
+    return response.json();
+}).then(data =>{
+    console.log(data)
+}).catch((err) =>{
+    console.log('rejected' , err);
+})
+
+//await
+
+const get = async() =>{
+    const response = await fetch('https://jsonplaceholder.typicode.com/todos/');
+    const data = await response.json();
+    return data;
+};
+console.log(1)
+console.log(2)
+get()
+.then(data => console.log('resolved:', data));
+console.log(3)
+console.log(4)
