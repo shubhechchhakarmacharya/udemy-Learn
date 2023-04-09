@@ -171,6 +171,9 @@ num.sort((a,b) =>{
     return b.score - a.score;
 });
 console.log(num)
+
+//Chaining the array method
+
 const numbers = [
     {name:"Name" , score:70},
     {name:"Name2" , score:60},
@@ -181,4 +184,11 @@ const final = numbers
     .filter(fnum =>fnum.score > 60)
     .map(fnum => `The score is ${fnum.score} of ${fnum.name}.`);
 console.log(final)
-//chaining the array method
+
+//Date and time
+const now = new Date();
+console.log(now);
+console.log("Date:", now.getFullYear());
+
+const timeStamp = 19823712467;
+console.log(new Date(timeStamp));
