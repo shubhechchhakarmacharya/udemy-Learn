@@ -190,5 +190,44 @@ const now = new Date();
 console.log(now);
 console.log("Date:", now.getFullYear());
 
-const timeStamp = 19823712467;
+const data = (callback) =>{
+    const timeStamp = 19823712467;
 console.log(new Date(timeStamp));
+
+
+//Async https request
+const request = new XMLHttpRequest();
+
+request.addEventListener("readystatechange" , ()=>{
+    if (request.readyState ===4 && request.status === 200){
+        const data = JSON.parse(request.responseText);
+        callback(undefined, data);
+    } else if(request.readyState === 4){
+        callback('could not fetch data', undefined)
+    }
+})
+request.open("GET", "https://jsonplaceholder.typicode.com/todos/")
+request.send();
+};
+
+data((err,data) =>{
+console.log('callback fires')
+if(err){
+    console.log(err);
+} else{
+    console.log(data)
+}
+})
+
+//Promise
+const something = () =>{
+    return new Promise((resolve,reject) => {
+        resolve("Resolved")
+        reject("Rejected")
+    })
+}
+something().then(data =>{ 
+    console.log(resolve())
+}).catch(err =>{
+    console.log(err)
+})
