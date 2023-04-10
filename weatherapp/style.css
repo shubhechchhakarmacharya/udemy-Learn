@@ -1,0 +1,11 @@
+body{
+    background-color: #eeedec;
+    letter-spacing: 0.2em;
+    font-size: 0.8em;
+}
+.container{
+    max-inline-size: 400px;
+}
+.icon img{
+    background-color: white;
+}
