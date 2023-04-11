@@ -256,3 +256,26 @@ get()
 .then(data => console.log('resolved:', data));
 console.log(3)
 console.log(4)
+
+//local storage
+localStorage.setItem("name","Someone");
+localStorage.setItem("age", 20);
+
+let names = localStorage.getItem("name");
+let age = localStorage.getItem("age");
+localStorage.removeItem("name")
+localStorage.clear()
+console.log(names, age);
+
+//Stringify 
+const listed = [
+    {'name' : 'Reyman' , "age" : 20},
+    {'name' : 'Rolex' , "age" : 45},
+    {'name' : 'Yami' , "age" : 33},
+    {'name' : 'Yenen' , "age" : 27}
+]
+
+localStorage.setItem("listed" , JSON.stringify((listed)))
+
+let stored = localStorage.getItem('listed');
+console.log(JSON.parse(stored))
