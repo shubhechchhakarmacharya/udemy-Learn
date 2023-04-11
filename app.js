@@ -279,3 +279,69 @@ localStorage.setItem("listed" , JSON.stringify((listed)))
 
 let stored = localStorage.getItem('listed');
 console.log(JSON.parse(stored))
+
+//constructor and class
+
+class Users{
+    constructor(name,mail){
+        this.name = name;
+        this.mail = mail;
+    }
+}
+const user1 = new Users("leon" , "leon@gmail.com")
+const user2 = new Users("devis" , "devis@gmail.com")
+console.log(user1 , user2)
+
+//class methods and methods
+
+class User {
+    constructor(name, post) {
+      this.name = name;
+      this.post = post;
+    }
+    login() {
+      console.log(`${this.name} logged in.`);
+      return this;
+    }
+    logout() {
+      console.log(`${this.name} logged out.`);
+    }
+  }
+  
+  class Admin extends User {
+    // constructor(name, mail, title){ Super idea
+    //     super(name, mail)
+    //     this.title
+        deleteUser(user, users) {
+            users = users.filter(u => u.name !== user.name);
+            return users;
+          }
+        }
+    // }
+    
+  
+  const userOne = new User("lea", "Developer");
+  const userTwo = new User("sia", "Designer");
+  const userThree = new Admin("Ponia", "Admin"); //, 'Fire people');
+  
+  let users = [userOne, userTwo, userThree];
+  users = userThree.deleteUser(userTwo, users);
+  console.log(users);
+
+//Using function is also same method to use instead of creating a class.
+
+function Use(name, mail){
+    this.name = name;
+    this.mail= mail;
+}
+//Prototypcal inheritance
+function Admn(name, mail, title){
+    Use.call(this, name, mail, title);
+        this.title = title;
+}
+const useOne = new Use("meronaam" , "Meroemail")
+const useTwo = new Use("uskonaam" , "Uskoemail")
+const useThree = new Use("Admin" , "Admin@mail")
+console.log(useOne, useTwo, useThree);
+
+Admn.prototype = Object.create(User.prototype);
