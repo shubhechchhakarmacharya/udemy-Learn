@@ -339,9 +339,38 @@ function Admn(name, mail, title){
     Use.call(this, name, mail, title);
         this.title = title;
 }
+
 const useOne = new Use("meronaam" , "Meroemail")
 const useTwo = new Use("uskonaam" , "Uskoemail")
 const useThree = new Use("Admin" , "Admin@mail")
 console.log(useOne, useTwo, useThree);
 
 Admn.prototype = Object.create(User.prototype);
+
+circle = Math.PI 
+console.log(circle)
+
+const Name = {
+    firstName : "Yesus",
+    lastName : "Pradhan",
+
+    set fullName(fullName){
+        this.firstName = fullName.toLowerCase
+    }
+}
+Name.firstName = "Simrik"
+console.log(Name.firstName)
+
+class Timer {
+    constructor(start, stop) {
+        this.start = start,
+            this.stop = stop;
+    }
+}
+  let someTime = new Timer(0, 230);
+  console.log("Starting time: " + someTime.start);
+  console.log("Stopping time: " + someTime.stop);
+  Object.defineProperty(someTime, 'time', {
+    get: function() {return (this.stop - this.start) / 60; }
+  });
+  console.log("Time elapsed in minutes: " + someTime.time.toPrecision(3));
