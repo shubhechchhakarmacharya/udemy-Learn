@@ -374,3 +374,64 @@ class Timer {
     get: function() {return (this.stop - this.start) / 60; }
   });
   console.log("Time elapsed in minutes: " + someTime.time.toPrecision(3));
+
+  //More ES6 ES7
+  //rest parameter
+
+  const numb = (...nums) =>{
+    console.log(nums.map((num, index) => index + num)    
+    )
+  }
+
+  const double = numb(1,2,3,4,5,6,7,8,9)
+  
+
+  //spread syntax array
+  const b = ["tem" , "tom" , "gresh"]
+  const a = ["sara" , "dev" , "lara" , ...b]
+  console.log(...a)
+
+  //spread syntax object
+  const obj = {
+    name: "name" ,
+    age: 12,
+    county : "country"
+  }
+  const newObj = {...obj}
+  console.log(newObj)
+
+  //Set
+  const wArray = ['what', 'why', 'when', 'why'];
+  console.log(wArray)
+
+  const wSet = new Set(wArray)
+  console.log(wSet)
+
+  const unique = [...wSet];
+  console.log(unique)
+
+  const ages = new Set();
+  ages.add(20);
+  ages.add(50);
+  ages.add(25).add(30).add("Set");
+  ages.delete(20)
+  console.log(ages , ages.size);
+  ages.clear() //to clear all values
+
+//Symbol
+const symbolOne = Symbol('Generic Name');
+const symbolTwo = Symbol('Generic Name');
+
+console.log(symbolOne , typeof symbolOne)
+console.log(symbolOne === symbolTwo)
+
+const ninja = {};
+
+ninja.age = 30;
+ninja['nam'] = 'No';
+ninja['nam'] = 'Ninja';
+
+ninja[symbolOne] = 'Wait'
+ninja[symbolTwo] = 'Okay'
+
+console.log(ninja)
