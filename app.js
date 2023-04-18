@@ -435,3 +435,4 @@ ninja[symbolOne] = 'Wait'
 ninja[symbolTwo] = 'Okay'
 
 console.log(ninja)
+
